@@ -66,7 +66,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     },
                     blendMode: BlendMode.dstIn,
                     child: Image.asset(
-                      'assets/images/bitsphere_logo.jpeg',
+                      'assets/images/bitsphere_logo.jpg',
                       fit: BoxFit.cover,
                       width: double.infinity,
                     ),
@@ -134,7 +134,7 @@ class _SignInScreenState extends State<SignInScreen> {
     );
   }
 
-  // Custom button widget with neon shadow
+  // Custom button widget with Material 3 style and neon shadow
   Widget _buildSignInButton({
     required IconData icon,
     required String text,
@@ -144,9 +144,9 @@ class _SignInScreenState extends State<SignInScreen> {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.cyan.withOpacity(0.5),
-            blurRadius: 10,
-            spreadRadius: 2,
+            color: Colors.cyan.withOpacity(0.3), // Subtle neon shadow
+            blurRadius: 8,
+            spreadRadius: 1,
             offset: const Offset(0, 0),
           ),
         ],
@@ -160,18 +160,23 @@ class _SignInScreenState extends State<SignInScreen> {
         ),
         label: Text(
           text,
-          style: GoogleFonts.orbitron(
-            fontSize: 18,
+          style: GoogleFonts.poppins( // Changed font to Poppins
+            fontSize: 16,
             fontWeight: FontWeight.w600,
             color: Colors.white,
           ),
         ),
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.black.withOpacity(0.8),
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+          backgroundColor: Colors.grey[900], // Dark tonal surface for Material 3
+          foregroundColor: Colors.cyan, // Cyan accent on interaction
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
-            side: const BorderSide(color: Colors.cyan, width: 2),
+            borderRadius: BorderRadius.circular(12), // Rounded corners for Material 3
+          ),
+          elevation: 2, // Slight elevation for Material 3
+          textStyle: GoogleFonts.poppins(
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
           ),
         ),
       ),
