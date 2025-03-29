@@ -66,7 +66,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     },
                     blendMode: BlendMode.dstIn,
                     child: Image.asset(
-                      'assets/images/bitsphere_logo.jpg',
+                      'assets/images/bitsphere_logo.jpeg',
                       fit: BoxFit.cover,
                       width: double.infinity,
                     ),
