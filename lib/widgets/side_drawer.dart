@@ -50,15 +50,6 @@ class SideDrawer extends StatelessWidget {
           ),
           _buildDrawerItem(
             context,
-            icon: Icons.shop,
-            title: 'Marketplace',
-            onTap: () {
-              onItemSelected(1);
-              Navigator.pop(context);
-            },
-          ),
-          _buildDrawerItem(
-            context,
             icon: Icons.add_circle,
             title: 'Upload',
             onTap: () {

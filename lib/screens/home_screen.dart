@@ -47,8 +47,6 @@ class _HomeScreenState extends State<HomeScreen>
     switch (index) {
       case 0:
         return 'Home';
-      case 1:
-        return 'Marketplace';
       case 2:
         return 'Upload';
       case 3:
@@ -68,11 +66,6 @@ class _HomeScreenState extends State<HomeScreen>
           children: categories.map((category) {
             return ContainerBase(category: category);
           }).toList(),
-        );
-      case 1:
-        return const Center(
-          child: Text('Marketplace',
-              style: TextStyle(color: AppColors.primaryText)),
         );
       case 2:
         return FutureBuilder<String?>(

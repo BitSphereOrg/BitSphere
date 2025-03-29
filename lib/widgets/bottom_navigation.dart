@@ -33,7 +33,6 @@ class BottomNavigation extends StatelessWidget {
           backgroundColor: AppColors.primaryBackground,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(icon: Icon(Icons.shop), label: 'Marketplace'),
             BottomNavigationBarItem(
               icon: Icon(Icons.add_circle, size: 36),
               label: 'Upload',
