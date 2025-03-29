@@ -8,7 +8,7 @@ class HerokuService {
     final user = FirebaseAuth.instance.currentUser;
     final token = await user?.getIdToken();
     final response = await _dio.post(
-      'http://localhost:50000/heroku/create-app',
+      'http://203.161.39.224:50000/heroku/create-app',
       data: {'appName': appName},
       options: Options(
         headers: {
@@ -29,7 +29,7 @@ class HerokuService {
     final user = FirebaseAuth.instance.currentUser;
     final token = await user?.getIdToken();
     final response = await _dio.post(
-      'http://localhost:50000/heroku/deploy-app',
+      'http://203.161.39.224:50000/heroku/deploy-app',
       data: {'appId': appId, 'githubUrl': githubUrl},
       options: Options(
         headers: {
@@ -48,7 +48,7 @@ class HerokuService {
     final user = FirebaseAuth.instance.currentUser;
     final token = await user?.getIdToken();
     final response = await _dio.get(
-      'http://localhost:50000/heroku/app-status/$appId',
+      'http://203.161.39.224:50000/heroku/app-status/$appId',
       options: Options(
         headers: {
           'Authorization': 'Bearer $token',
@@ -67,7 +67,7 @@ class HerokuService {
     final user = FirebaseAuth.instance.currentUser;
     final token = await user?.getIdToken();
     final response = await _dio.post(
-      'http://localhost:50000/heroku/toggle-app',
+      'http://203.161.39.224:50000/heroku/toggle-app',
       data: {'appId': appId, 'enable': enable},
       options: Options(
         headers: {

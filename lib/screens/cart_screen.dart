@@ -32,7 +32,7 @@ class _CartScreenState extends State<CartScreen> {
     final user = FirebaseAuth.instance.currentUser;
     final token = await user?.getIdToken();
     final response = await http.post(
-      Uri.parse('http://localhost:50000/create-razorpay-order'),
+      Uri.parse('http://203.161.39.224:50000/create-razorpay-order'),
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer $token',
@@ -86,7 +86,7 @@ class _CartScreenState extends State<CartScreen> {
       final user = FirebaseAuth.instance.currentUser;
       final token = await user?.getIdToken();
       final verifyResponse = await http.post(
-        Uri.parse('http://localhost:50000/verify-razorpay-payment'),
+        Uri.parse('http://203.161.39.224:50000/verify-razorpay-payment'),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',

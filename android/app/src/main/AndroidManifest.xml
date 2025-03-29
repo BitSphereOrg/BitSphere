@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
-    <!-- Allow cleartext traffic for local testing (e.g., http://localhost:3000) -->
+    <!-- Allow cleartext traffic for local testing (e.g., http://203.161.39.224:3000) -->
     <application
         android:label="@string/app_name"
         android:name="${applicationName}"
