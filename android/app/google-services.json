@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "47691295977",
+    "project_id": "bitsphere-b6de9",
+    "storage_bucket": "bitsphere-b6de9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47691295977:android:c81aab905cbce66fbbd478",
+        "android_client_info": {
+          "package_name": "com.example.bitsphere"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuVcMW2218L5PTJ8CstuNCfMAiy46Ry0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
