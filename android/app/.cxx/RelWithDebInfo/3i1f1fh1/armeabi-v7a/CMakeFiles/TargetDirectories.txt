@@ -1,0 +1,2 @@
+C:/Users/silent/Documents/BitSphere/android/app/.cxx/RelWithDebInfo/3i1f1fh1/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/silent/Documents/BitSphere/android/app/.cxx/RelWithDebInfo/3i1f1fh1/armeabi-v7a/CMakeFiles/rebuild_cache.dir

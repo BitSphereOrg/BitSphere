@@ -3,7 +3,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_appauth/flutter_appauth.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -65,7 +64,7 @@ class AuthService {
 
   Future<bool> verifyGitHubUrl(String githubUrl) async {
     try {
-      final AuthorizationTokenResponse? result = await _appAuth.authorizeAndExchangeCode(
+      final AuthorizationTokenResponse result = await _appAuth.authorizeAndExchangeCode(
         AuthorizationTokenRequest(
           clientId,
           redirectUrl,

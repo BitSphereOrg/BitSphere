@@ -12,7 +12,20 @@
           "package_name": "com.example.bitsphere"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "47691295977-kq7jgglan2c11jrg6rj01lp2ueuq7u3p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bitsphere",
+            "certificate_hash": "4abe22ba9612d4305049eb0c8c0242e9de0ee523"
+          }
+        },
+        {
+          "client_id": "47691295977-g9fflbgedqvcrod0an6ilk4cvkeaji1g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAuVcMW2218L5PTJ8CstuNCfMAiy46Ry0I"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "47691295977-g9fflbgedqvcrod0an6ilk4cvkeaji1g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

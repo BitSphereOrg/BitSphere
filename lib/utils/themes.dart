@@ -7,7 +7,6 @@ ThemeData buildTheme() {
     colorScheme: ColorScheme.dark(
       primary: AppColors.accentBlue,
       secondary: AppColors.accentYellow,
-      background: AppColors.primaryBackground,
       surface: AppColors.secondaryBackground,
     ),
     textTheme: const TextTheme(

@@ -58,7 +58,7 @@ class HostingPlacesScreen extends StatelessWidget {
 
                         final project = projectSnapshot.data!.data() as Map<String, dynamic>;
                         final githubUrl = project['githubUrl'] as String;
-                        final appName = 'bitsphere-${serviceId}';
+                        final appName = 'bitsphere-$serviceId';
 
                         return Card(
                           color: AppColors.secondaryBackground,
