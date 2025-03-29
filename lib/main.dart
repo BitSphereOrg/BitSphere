@@ -15,8 +15,24 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Bitsphere',
+      debugShowCheckedModeBanner: false, // Remove debug banner
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        useMaterial3: true, // Enable Material 3
+        colorScheme: ColorScheme.dark(
+          primary: Colors.cyan,
+          surface: Colors.grey[900]!,
+          onSurface: Colors.white,
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.grey[900],
+            foregroundColor: Colors.cyan,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            elevation: 2,
+          ),
+        ),
       ),
       home: const HomeScreen(),
     );
