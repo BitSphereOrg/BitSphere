@@ -1,26 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart'; // For Firebase Auth
-import 'package:cloud_firestore/cloud_firestore.dart'; // For Firestore
+import 'package:firebase_auth/firebase_auth.dart';
 import '../utils/colors.dart';
+import '../utils/auth_service.dart'; 
 
 class BottomNavigation extends StatelessWidget {
   final int selectedIndex;
   final Function(int) onItemSelected;
+  final AuthService authService;
 
   const BottomNavigation({
     required this.selectedIndex,
     required this.onItemSelected,
+    required this.authService, 
     super.key,
   });
 
-  Future<bool> _isDeveloper() async {
-    User? user = FirebaseAuth.instance.currentUser;
-    if (user == null) return false; // No user logged in
-
-    final firestore = FirebaseFirestore.instance;
-    final doc = await firestore.collection('users').doc(user.uid).get();
-    return doc.exists && doc.data()?['role'] == 'developer';
-  }
+  // Stream to listen to auth state changes
+  Stream<User?> get _authStateStream => FirebaseAuth.instance.authStateChanges();
 
   @override
   Widget build(BuildContext context) {
@@ -36,60 +32,94 @@ class BottomNavigation extends StatelessWidget {
       ),
       child: ClipRRect(
         borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-        child: FutureBuilder<bool>(
-          future: _isDeveloper(), // Check if the user is a developer
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              // Show a loading state while checking the user's role
-              return BottomNavigationBar(
-                items: const [
-                  BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-                  BottomNavigationBarItem(icon: Icon(Icons.cloud), label: 'Hosting'),
-                  BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-                ],
-                currentIndex: selectedIndex,
-                onTap: null, // Disable taps during loading
-                selectedItemColor: AppColors.accentYellow,
-                unselectedItemColor: AppColors.secondaryText,
-                backgroundColor: AppColors.primaryBackground,
-              );
+        child: StreamBuilder<User?>(
+          stream: _authStateStream, // Listen to auth state changes
+          builder: (context, authSnapshot) {
+            if (authSnapshot.connectionState == ConnectionState.waiting) {
+              return _buildLoadingNavBar();
             }
 
-            // Determine the items based on whether the user is a developer
-            final isDeveloper = snapshot.data ?? false;
-            final items = [
-              const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-              if (isDeveloper) // Only show Upload for developers
-                const BottomNavigationBarItem(icon: Icon(Icons.add_circle), label: 'Upload'),
-              const BottomNavigationBarItem(icon: Icon(Icons.cloud), label: 'Hosting'),
-              const BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-            ];
-
-            // Adjust selectedIndex if necessary (e.g., if Upload is hidden)
-            int adjustedIndex = selectedIndex;
-            if (!isDeveloper && selectedIndex > 1) {
-              adjustedIndex--; // Shift index down if Upload is hidden
-            } else if (adjustedIndex > items.length - 1) {
-              adjustedIndex = 0; // Fallback to Home if index is out of bounds
+            final user = authSnapshot.data;
+            if (user == null) {
+              return _buildDefaultNavBar(); // Show basic nav for unauthenticated users
             }
 
-            return BottomNavigationBar(
-              currentIndex: adjustedIndex,
-              onTap: (index) {
-                if (!isDeveloper && index > 0) {
-                  onItemSelected(index + 1); // Adjust index for callback
-                } else {
-                  onItemSelected(index);
+            return FutureBuilder<String?>(
+              future: authService.getUserRole(), // Fetch role once user is authenticated
+              builder: (context, roleSnapshot) {
+                if (roleSnapshot.connectionState == ConnectionState.waiting) {
+                  return _buildLoadingNavBar();
                 }
+
+                final isDeveloper = roleSnapshot.data == 'developer';
+                final items = [
+                  const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+                  if (isDeveloper) // Only show Upload for developers
+                    const BottomNavigationBarItem(icon: Icon(Icons.add_circle), label: 'Upload'),
+                  const BottomNavigationBarItem(icon: Icon(Icons.cloud), label: 'Hosting'),
+                  const BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+                ];
+
+                // Adjust selectedIndex based on whether Upload is present
+                int adjustedIndex = selectedIndex;
+                if (!isDeveloper && selectedIndex > 1) {
+                  adjustedIndex--; // Shift index down if Upload is hidden
+                } else if (adjustedIndex >= items.length) {
+                  adjustedIndex = 0; // Fallback to Home if out of bounds
+                }
+
+                return BottomNavigationBar(
+                  currentIndex: adjustedIndex,
+                  onTap: (index) {
+                    // Adjust the index sent to the callback based on Upload's presence
+                    if (!isDeveloper && index > 0) {
+                      onItemSelected(index + 1);
+                    } else {
+                      onItemSelected(index);
+                    }
+                  },
+                  selectedItemColor: AppColors.accentYellow,
+                  unselectedItemColor: AppColors.secondaryText,
+                  backgroundColor: AppColors.primaryBackground,
+                  items: items,
+                );
               },
-              selectedItemColor: AppColors.accentYellow,
-              unselectedItemColor: AppColors.secondaryText,
-              backgroundColor: AppColors.primaryBackground,
-              items: items,
             );
           },
         ),
       ),
+    );
+  }
+
+  // Default navigation bar for unauthenticated users or loading state
+  Widget _buildDefaultNavBar() {
+    return BottomNavigationBar(
+      items: const [
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.cloud), label: 'Hosting'),
+        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+      ],
+      currentIndex: selectedIndex.clamp(0, 2), // Clamp to valid range
+      onTap: onItemSelected,
+      selectedItemColor: AppColors.accentYellow,
+      unselectedItemColor: AppColors.secondaryText,
+      backgroundColor: AppColors.primaryBackground,
+    );
+  }
+
+  // Loading state navigation bar
+  Widget _buildLoadingNavBar() {
+    return BottomNavigationBar(
+      items: const [
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.cloud), label: 'Hosting'),
+        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+      ],
+      currentIndex: selectedIndex.clamp(0, 2), // Clamp to valid range
+      onTap: null, // Disable taps during loading
+      selectedItemColor: AppColors.accentYellow,
+      unselectedItemColor: AppColors.secondaryText,
+      backgroundColor: AppColors.primaryBackground,
     );
   }
 }

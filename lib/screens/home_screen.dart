@@ -7,6 +7,7 @@ import '../widgets/side_drawer.dart';
 import '../widgets/bottom_navigation.dart';
 import '../widgets/container_base.dart';
 import 'hosting_places_screen.dart';
+import 'profile_screen.dart';
 import 'sign_in_screen.dart';
 import 'upload_project_screen.dart';
 
@@ -20,7 +21,14 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
   int _selectedIndex = 0;
-  final List<String> categories = ['Mobile App', 'Web App', 'AI/ML', 'Game', 'IoT', 'Other'];
+  final List<String> categories = [
+    'Mobile App',
+    'Web App',
+    'AI/ML',
+    'Game',
+    'IoT',
+    'Other'
+  ];
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   late TabController _tabController;
   final AuthService _authService = AuthService();
@@ -67,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen>
             return ContainerBase(category: category);
           }).toList(),
         );
-      case 2:
+      case 1:
         return FutureBuilder<String?>(
           future: _authService.getUserRole(),
           builder: (context, snapshot) {
@@ -85,13 +93,10 @@ class _HomeScreenState extends State<HomeScreen>
             );
           },
         );
-      case 3:
+      case 2:
         return const HostingPlacesScreen();
-      case 4:
-        return const Center(
-          child:
-              Text('Profile', style: TextStyle(color: AppColors.primaryText)),
-        );
+      case 3:
+        return const ProfileScreen();
       default:
         return const SizedBox.shrink();
     }
@@ -120,11 +125,13 @@ class _HomeScreenState extends State<HomeScreen>
             categories: _selectedIndex == 0 ? categories : [],
             tabController: _selectedIndex == 0 ? _tabController : null,
           ),
-          drawer: SideDrawer(onItemSelected: _onItemSelected),
+          drawer: SideDrawer(
+              onItemSelected: _onItemSelected, authService: _authService),
           body: _buildBody(),
           bottomNavigationBar: BottomNavigation(
             selectedIndex: _selectedIndex,
             onItemSelected: _onItemSelected,
+            authService: _authService,
           ),
           extendBody: true,
         );
