@@ -8,7 +8,7 @@ class ContainerBase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final projects = List.generate(10, (index) => 'Project $index in $category');
+    final projects = List.generate(10, (index) => 'Bit Project $index in $category');
 
     return ListView.builder(
       padding: const EdgeInsets.all(16.0),
@@ -29,7 +29,7 @@ class ContainerBase extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Description of ${projects[index]}',
+                  'Description of whole project in short & ${projects[index]}',
                   style: const TextStyle(color: AppColors.secondaryText),
                 ),
               ],

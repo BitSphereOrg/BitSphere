@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
+import 'utils/colors.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,12 +16,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Bitsphere',
-      debugShowCheckedModeBanner: false, // Remove debug banner
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        useMaterial3: true, // Enable Material 3
+        useMaterial3: true,
         colorScheme: ColorScheme.dark(
           primary: Colors.cyan,
-          surface: Colors.grey[900]!,
+            surface: AppColors.primaryBackground,
           onSurface: Colors.white,
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(

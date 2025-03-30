@@ -77,7 +77,7 @@ class AuthService {
         ),
       );
 
-      if (result == null || result.accessToken == null) {
+      if (result.accessToken == null) {
         return false;
       }
 

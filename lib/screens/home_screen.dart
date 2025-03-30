@@ -20,7 +20,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
   int _selectedIndex = 0;
-  final List<String> categories = ['All', 'Web', 'Mobile', 'AI'];
+  final List<String> categories = ['Mobile App', 'Web App', 'AI/ML', 'Game', 'IoT', 'Other'];
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   late TabController _tabController;
   final AuthService _authService = AuthService();
@@ -47,11 +47,11 @@ class _HomeScreenState extends State<HomeScreen>
     switch (index) {
       case 0:
         return 'Home';
-      case 2:
+      case 1:
         return 'Upload';
-      case 3:
+      case 2:
         return 'Hosting Places';
-      case 4:
+      case 3:
         return 'Profile';
       default:
         return '';

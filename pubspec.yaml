@@ -37,12 +37,18 @@ dependencies:
   dio: ^5.7.0
   font_awesome_flutter: ^10.7.0
   permission_handler: ^11.3.1
+  flutter_launcher_icons: ^0.13.1
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
 
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/bitsphere_logo.jpeg"
 
 flutter:
   uses-material-design: true

@@ -1,34 +1,74 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import '../utils/auth_service.dart';
 import '../utils/colors.dart';
+import 'my_services_screen.dart';
 
-class SideDrawer extends StatelessWidget {
+class SideDrawer extends StatefulWidget {
   final Function(int) onItemSelected;
 
   const SideDrawer({required this.onItemSelected, super.key});
 
   @override
+  _SideDrawerState createState() => _SideDrawerState();
+}
+
+class _SideDrawerState extends State<SideDrawer> {
+  User? user = FirebaseAuth.instance.currentUser;
+  final authService = AuthService();
+  String name = "Loading...";
+  String email = "Loading...";
+  String photoUrl = "";
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchUserData();
+  }
+
+  Future<void> _fetchUserData() async {
+    if (user != null) {
+      setState(() {
+        email = user!.email ?? "No email";
+        photoUrl = user!.photoURL ?? "";
+      });
+
+      DocumentSnapshot userDoc = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(user!.uid)
+          .get();
+      if (userDoc.exists) {
+        setState(() {
+          name = userDoc['name'] ?? "No name";
+        });
+      }
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        padding: const EdgeInsets.all(16.0), // Add padding around the ListView
+        padding: const EdgeInsets.all(16.0),
         children: [
-          // Drawer header with profile photo
           UserAccountsDrawerHeader(
-            accountName: const Text(
-              'Silent',
-              style: TextStyle(color: AppColors.primaryText),
+            accountName: Text(
+              name,
+              style: const TextStyle(color: AppColors.primaryText),
             ),
-            accountEmail: const Text(
-              'silent@example.com',
-              style: TextStyle(color: AppColors.secondaryText),
+            accountEmail: Text(
+              email,
+              style: const TextStyle(color: AppColors.secondaryText),
             ),
             currentAccountPicture: CircleAvatar(
+              backgroundImage:
+                  photoUrl.isNotEmpty ? NetworkImage(photoUrl) : null,
               backgroundColor: AppColors.accentBlue,
-              child: const Icon(
-                Icons.person,
-                size: 50,
-                color: AppColors.primaryText,
-              ),
+              child: photoUrl.isEmpty
+                  ? const Icon(Icons.person,
+                      size: 50, color: AppColors.primaryText)
+                  : null,
             ),
             decoration: BoxDecoration(
               color: AppColors.secondaryBackground,
@@ -38,115 +78,60 @@ class SideDrawer extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8.0),
-          // Main navigation items
-          _buildDrawerItem(
-            context,
-            icon: Icons.home,
-            title: 'Home',
-            onTap: () {
-              onItemSelected(0);
-              Navigator.pop(context);
-            },
-          ),
-          _buildDrawerItem(
-            context,
-            icon: Icons.add_circle,
-            title: 'Upload',
-            onTap: () {
-              onItemSelected(2);
-              Navigator.pop(context);
-            },
-          ),
-          _buildDrawerItem(
-            context,
-            icon: Icons.cloud,
-            title: 'Hosting Places',
-            onTap: () {
-              onItemSelected(3);
-              Navigator.pop(context);
-            },
-          ),
-          _buildDrawerItem(
-            context,
-            icon: Icons.person,
-            title: 'Profile',
-            onTap: () {
-              onItemSelected(4);
-              Navigator.pop(context);
-            },
-          ),
+          _buildDrawerItem(context,
+              icon: Icons.home,
+              title: 'Home',
+              onTap: () => widget.onItemSelected(0)),
+          _buildDrawerItem(context,
+              icon: Icons.add_circle,
+              title: 'Upload',
+              onTap: () => widget.onItemSelected(1)),
+          _buildDrawerItem(context,
+              icon: Icons.cloud,
+              title: 'Hosting Places',
+              onTap: () => widget.onItemSelected(2)),
+          _buildDrawerItem(context,
+              icon: Icons.person,
+              title: 'Profile',
+              onTap: () => widget.onItemSelected(3)),
           const Divider(color: AppColors.secondaryText),
-          // User-specific items
-          _buildDrawerItem(
-            context,
-            icon: Icons.build,
-            title: 'My Services',
-            onTap: () {
-              Navigator.pop(context);
-              print('Navigate to My Services');
-            },
-          ),
-          _buildDrawerItem(
-            context,
-            icon: Icons.chat,
-            title: 'My Chats',
-            onTap: () {
-              Navigator.pop(context);
-              print('Navigate to My Chats');
-            },
-          ),
-          _buildDrawerItem(
-            context,
-            icon: Icons.upload,
-            title: 'My Uploads',
-            onTap: () {
-              Navigator.pop(context);
-              print('Navigate to My Uploads');
-            },
-          ),
+          _buildDrawerItem(context, icon: Icons.build, title: 'My Services',
+              onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const MyServicesScreen()),
+            );
+          }),
+          _buildDrawerItem(context,
+              icon: Icons.upload,
+              title: 'My Uploads',
+              onTap: () => print('Navigate to My Uploads')),
           const Divider(color: AppColors.secondaryText),
-          // Settings and About
-          _buildDrawerItem(
-            context,
-            icon: Icons.settings,
-            title: 'Settings',
-            onTap: () {
-              Navigator.pop(context);
-              print('Navigate to Settings');
-            },
-          ),
-          _buildDrawerItem(
-            context,
-            icon: Icons.info,
-            title: 'About',
-            onTap: () {
-              Navigator.pop(context);
-              print('Navigate to About');
-            },
-          ),
-          const Divider(color: AppColors.secondaryText),
-          // Logout
-          _buildDrawerItem(
-            context,
-            icon: Icons.logout,
-            title: 'Logout',
-            onTap: () {
-              Navigator.pop(context);
-              print('Logout');
-            },
-          ),
+          _buildDrawerItem(context, icon: Icons.settings, title: 'Settings',
+              onTap: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Coming Soon!'),
+              ),
+            );
+          }),
+          _buildDrawerItem(context,
+              icon: Icons.info,
+              title: 'About',
+              onTap: () => print('Navigate to About')),
+          _buildDrawerItem(context, icon: Icons.logout, title: 'Logout',
+              onTap: () async {
+            await authService.signOut();
+          }),
         ],
       ),
     );
   }
 
-  // Helper method to build drawer items with box format and shadow
-  Widget _buildDrawerItem(
-    BuildContext context, {
-    required IconData icon,
-    required String title,
-    required VoidCallback onTap,
-  }) {
+  Widget _buildDrawerItem(BuildContext context,
+      {required IconData icon,
+      required String title,
+      required VoidCallback onTap}) {
     return Container(
       margin: const EdgeInsets.only(bottom: 8.0),
       decoration: BoxDecoration(
@@ -162,10 +147,8 @@ class SideDrawer extends StatelessWidget {
       ),
       child: ListTile(
         leading: Icon(icon, color: AppColors.accentBlue),
-        title: Text(
-          title,
-          style: const TextStyle(color: AppColors.primaryText),
-        ),
+        title:
+            Text(title, style: const TextStyle(color: AppColors.primaryText)),
         onTap: onTap,
       ),
     );
