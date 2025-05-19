@@ -1,0 +1,2 @@
+/Users/shreyanshtomar/Documents/BitSphere/android/app/.cxx/RelWithDebInfo/3v2x5rw6/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/shreyanshtomar/Documents/BitSphere/android/app/.cxx/RelWithDebInfo/3v2x5rw6/arm64-v8a/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,4 @@
+#Sat May 17 09:43:59 IST 2025
+base.0=/Users/shreyanshtomar/Documents/BitSphere/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

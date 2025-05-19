@@ -1,0 +1,48 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.razorpay.razorpay_flutter-release-30:/values-en-rSG/values-en-rSG.xml",
+            "map": [
+                {
+                    "source": "/Users/shreyanshtomar/.gradle/caches/8.11.1/transforms/74af539946d54fb4b5cc5ecae3eb97fd/transformed/jetified-play-services-wallet-18.1.3/res/values-en-rSG/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "206",
+                        "endColumns": "70",
+                        "endOffsets": "276"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "74",
+                        "endOffsets": "125"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.razorpay.razorpay_flutter-mergeReleaseResources-28:/values-en-rSG/values-en-rSG.xml",
+            "map": [
+                {
+                    "source": "/Users/shreyanshtomar/.gradle/caches/8.11.1/transforms/74af539946d54fb4b5cc5ecae3eb97fd/transformed/jetified-play-services-wallet-18.1.3/res/values-en-rSG/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "206",
+                        "endColumns": "70",
+                        "endOffsets": "276"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "74",
+                        "endOffsets": "125"
+                    }
+                }
+            ]
+        }
+    ]
+}

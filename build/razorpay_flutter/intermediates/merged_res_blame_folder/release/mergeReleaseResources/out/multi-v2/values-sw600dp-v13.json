@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.razorpay.razorpay_flutter-release-30:/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/shreyanshtomar/.gradle/caches/8.11.1/transforms/3e2569fd54d8379ac08705adefd11b04/transformed/jetified-standard-core-1.6.49/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,93",
+                        "endLines": "2,15",
+                        "endColumns": "37,12",
+                        "endOffsets": "88,871"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.razorpay.razorpay_flutter-mergeReleaseResources-28:/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/shreyanshtomar/.gradle/caches/8.11.1/transforms/3e2569fd54d8379ac08705adefd11b04/transformed/jetified-standard-core-1.6.49/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,93",
+                        "endLines": "2,15",
+                        "endColumns": "37,12",
+                        "endOffsets": "88,871"
+                    }
+                }
+            ]
+        }
+    ]
+}

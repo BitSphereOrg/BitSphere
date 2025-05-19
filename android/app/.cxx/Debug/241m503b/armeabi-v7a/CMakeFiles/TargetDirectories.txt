@@ -1,0 +1,2 @@
+/Users/shreyanshtomar/Documents/BitSphere/android/app/.cxx/Debug/241m503b/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/shreyanshtomar/Documents/BitSphere/android/app/.cxx/Debug/241m503b/armeabi-v7a/CMakeFiles/rebuild_cache.dir

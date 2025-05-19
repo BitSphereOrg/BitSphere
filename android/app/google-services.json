@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "47691295977-oabe0naa4olirl60o0v87isiblo4u1j6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bitsphere",
+            "certificate_hash": "5d37077da844dbafacc2ab7c1d8487bef734a61a"
+          }
+        },
+        {
           "client_id": "47691295977-g9fflbgedqvcrod0an6ilk4cvkeaji1g.apps.googleusercontent.com",
           "client_type": 3
         }

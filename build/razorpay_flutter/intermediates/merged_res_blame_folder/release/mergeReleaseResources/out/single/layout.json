@@ -1,0 +1,62 @@
+[
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout/single_item.xml",
+        "source": "com.razorpay.razorpay_flutter-jetified-standard-core-1.6.49-6:/layout/single_item.xml"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout/notification_template_part_time.xml",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout/rzp_magic_base.xml",
+        "source": "com.razorpay.razorpay_flutter-jetified-standard-core-1.6.49-6:/layout/rzp_magic_base.xml"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout/notification_template_custom_big.xml",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/layout/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout/notification_template_icon_group.xml",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout/notification_template_part_chronometer.xml",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout/notification_action_tombstone.xml",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout/ime_base_split_test_activity.xml",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/layout/ime_base_split_test_activity.xml"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout/ime_secondary_split_test_activity.xml",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/layout/ime_secondary_split_test_activity.xml"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout/sdk_integration_status.xml",
+        "source": "com.razorpay.razorpay_flutter-jetified-standard-core-1.6.49-6:/layout/sdk_integration_status.xml"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout/toast_custom.xml",
+        "source": "com.razorpay.razorpay_flutter-release-26:/layout/toast_custom.xml"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout/custom_dialog.xml",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/layout/custom_dialog.xml"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout/wallet_test_layout.xml",
+        "source": "com.razorpay.razorpay_flutter-jetified-play-services-wallet-18.1.3-10:/layout/wallet_test_layout.xml"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout/notification_action.xml",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/layout/notification_action.xml"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout/rzp_loader.xml",
+        "source": "com.razorpay.razorpay_flutter-jetified-standard-core-1.6.49-6:/layout/rzp_loader.xml"
+    }
+]

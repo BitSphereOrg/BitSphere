@@ -1,0 +1,40 @@
+<variant
+    name="release"
+    package="com.example.bitsphere"
+    minSdkVersion="23"
+    targetSdkVersion="33"
+    shrinking="true"
+    mergedManifest="/Users/shreyanshtomar/Documents/BitSphere/build/app/intermediates/merged_manifest/release/processReleaseMainManifest/AndroidManifest.xml"
+    manifestMergeReport="/Users/shreyanshtomar/Documents/BitSphere/build/app/outputs/logs/manifest-merger-release-report.txt"
+    proguardFiles="/Users/shreyanshtomar/Documents/BitSphere/build/app/intermediates/default_proguard_files/global/proguard-android-optimize.txt-8.9.0:/Users/shreyanshtomar/Documents/BitSphere/flutter/packages/flutter_tools/gradle/flutter_proguard_rules.pro:proguard-rules.pro"
+    partialResultsDir="/Users/shreyanshtomar/Documents/BitSphere/build/app/intermediates/lint_vital_partial_results/release/lintVitalAnalyzeRelease/out">
+  <buildFeatures
+      namespacing="REQUIRED"/>
+  <sourceProviders>
+    <sourceProvider
+        manifests="src/main/AndroidManifest.xml"
+        javaDirectories="src/main/java:src/release/java:src/main/kotlin:src/release/kotlin"
+        resDirectories="src/main/res:src/release/res"
+        assetsDirectories="src/main/assets:src/release/assets"/>
+  </sourceProviders>
+  <testSourceProviders>
+  </testSourceProviders>
+  <testFixturesSourceProviders>
+  </testFixturesSourceProviders>
+  <manifestPlaceholders>
+    <placeholder
+        name="appAuthRedirectScheme"
+        value="bitsphere" />
+    <placeholder
+        name="applicationName"
+        value="io.flutter.app.FlutterApplication" />
+  </manifestPlaceholders>
+  <artifact
+      classOutputs="/Users/shreyanshtomar/Documents/BitSphere/build/app/intermediates/javac/release/compileReleaseJavaWithJavac/classes:/Users/shreyanshtomar/Documents/BitSphere/build/app/tmp/kotlin-classes/release:/Users/shreyanshtomar/Documents/BitSphere/build/app/kotlinToolingMetadata:/Users/shreyanshtomar/Documents/BitSphere/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/release/processReleaseResources/R.jar"
+      type="MAIN"
+      applicationId="com.example.bitsphere"
+      generatedSourceFolders="/Users/shreyanshtomar/Documents/BitSphere/build/app/generated/ap_generated_sources/release/out"
+      generatedResourceFolders="/Users/shreyanshtomar/Documents/BitSphere/build/app/generated/res/processReleaseGoogleServices:/Users/shreyanshtomar/Documents/BitSphere/build/app/generated/res/resValues/release"
+      desugaredMethodsFiles="/Users/shreyanshtomar/.gradle/caches/8.11.1/transforms/67e9ced642a099d828c985242f9da17f/transformed/D8BackportedDesugaredMethods.txt">
+  </artifact>
+</variant>

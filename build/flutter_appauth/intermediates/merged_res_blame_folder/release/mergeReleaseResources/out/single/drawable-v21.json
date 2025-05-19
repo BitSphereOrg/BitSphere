@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "io.crossingthestreams.flutterappauth.flutter_appauth-release-29:/drawable-v21/abc_list_divider_material.xml",
+        "source": "io.crossingthestreams.flutterappauth.flutter_appauth-appcompat-1.3.0-8:/drawable-v21/abc_list_divider_material.xml"
+    },
+    {
+        "merged": "io.crossingthestreams.flutterappauth.flutter_appauth-release-29:/drawable-v21/notification_action_background.xml",
+        "source": "io.crossingthestreams.flutterappauth.flutter_appauth-core-1.13.1-13:/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "io.crossingthestreams.flutterappauth.flutter_appauth-release-29:/drawable-v21/abc_btn_colored_material.xml",
+        "source": "io.crossingthestreams.flutterappauth.flutter_appauth-appcompat-1.3.0-8:/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "io.crossingthestreams.flutterappauth.flutter_appauth-release-29:/drawable-v21/abc_dialog_material_background.xml",
+        "source": "io.crossingthestreams.flutterappauth.flutter_appauth-appcompat-1.3.0-8:/drawable-v21/abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "io.crossingthestreams.flutterappauth.flutter_appauth-release-29:/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "io.crossingthestreams.flutterappauth.flutter_appauth-appcompat-1.3.0-8:/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "io.crossingthestreams.flutterappauth.flutter_appauth-release-29:/drawable-v21/abc_edit_text_material.xml",
+        "source": "io.crossingthestreams.flutterappauth.flutter_appauth-appcompat-1.3.0-8:/drawable-v21/abc_edit_text_material.xml"
+    }
+]

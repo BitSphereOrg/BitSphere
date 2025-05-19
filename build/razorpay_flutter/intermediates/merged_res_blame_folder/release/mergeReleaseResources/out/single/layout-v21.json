@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout-v21/notification_action_tombstone.xml",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout-v21/notification_template_icon_group.xml",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout-v21/notification_template_custom_big.xml",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/layout-v21/notification_action.xml",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/layout-v21/notification_action.xml"
+    }
+]

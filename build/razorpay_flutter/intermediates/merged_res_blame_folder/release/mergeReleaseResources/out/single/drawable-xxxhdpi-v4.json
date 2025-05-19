@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/drawable-xxxhdpi-v4/ic_call_answer_low.png",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/drawable-xxxhdpi-v4/ic_call_answer_low.png"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/drawable-xxxhdpi-v4/rzp_logo.png",
+        "source": "com.razorpay.razorpay_flutter-jetified-standard-core-1.6.49-6:/drawable-xxxhdpi-v4/rzp_logo.png"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/drawable-xxxhdpi-v4/ic_alert.png",
+        "source": "com.razorpay.razorpay_flutter-jetified-standard-core-1.6.49-6:/drawable-xxxhdpi-v4/ic_alert.png"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/drawable-xxxhdpi-v4/ic_call_decline.png",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/drawable-xxxhdpi-v4/ic_call_decline.png"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/drawable-xxxhdpi-v4/ic_tick_mark.png",
+        "source": "com.razorpay.razorpay_flutter-jetified-standard-core-1.6.49-6:/drawable-xxxhdpi-v4/ic_tick_mark.png"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/drawable-xxxhdpi-v4/ic_call_answer.png",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/drawable-xxxhdpi-v4/ic_call_answer.png"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/drawable-xxxhdpi-v4/ic_call_decline_low.png",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/drawable-xxxhdpi-v4/ic_call_decline_low.png"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/drawable-xxxhdpi-v4/ic_call_answer_video.png",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/drawable-xxxhdpi-v4/ic_call_answer_video.png"
+    },
+    {
+        "merged": "com.razorpay.razorpay_flutter-release-30:/drawable-xxxhdpi-v4/ic_call_answer_video_low.png",
+        "source": "com.razorpay.razorpay_flutter-core-1.13.1-15:/drawable-xxxhdpi-v4/ic_call_answer_video_low.png"
+    }
+]
